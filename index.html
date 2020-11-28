@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+<title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    overflow-x: hidden;
+  }
+  header {
+    width: 100vw;
+    height: 50px;
+    position: absolute;
+    left:0;top:0;
+    background: #1c1c1c;
+    box-shadow: 0px 3px 6px gray;
+    color: #d2d2d2;
+    padding: 16px;
+    user-select: none;
+    --moz-user-select: none;
+  }
+  #Discord_link {
+
+    width: 200px;
+    height: 65px;
+    position:fixed;
+    bottom: 7px;
+    right: 10px;
+    border: 1px solid rgba(0,0,0,0.4);
+    border-radius: 10px;
+    z-index: 100;
+    background: #7289d9;
+    line-height: 65px;
+    text-align: right;
+    user-select: none;
+    --moz-user-select: none;
+    transition: 0.5s ease all;
+    overflow: hidden;
+
+  }
+  #Discord_link:hover {
+
+    background: #7289ff;
+    transform: scale(1.05);
+
+  }
+  a #Discord_link {
+
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 10px #4e4e4c;
+
+  }a #Discord_link c{
+
+    margin-right: 7px;
+
+  }
+  .navItem {
+
+    cursor: pointer;
+    margin-right: max(4px,1.5vw);
+   transition: 0.35s ease all;
+
+  }
+  .active {
+
+    cursor: default;
+    color: white;
+
+  }
+  .title {
+
+    font-size: 20px;
+    position:absolute;
+    top: 13px;
+
+  }
+  footer {
+
+    width:100vw;
+    height: 80px;
+    background: #1c1c1c;
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    box-shadow: 0 -2px 5px #4e4e4c;
+    color: white;
+    text-align: left;
+
+  }
+  content {
+
+    with: 100vw;
+    height: calc(100vh - 50px);
+    position:absolute;
+    top: 50px;
+    left:0;
+    white-space: pre;
+
+  }
+  #info {
+
+    height: 100%;
+    width: 50%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    z-index: 999;
+    user-select: none;
+    --moz-user-select: none;
+
+  }
+  #dev-info {
+
+    margin-left: 10px;
+    font-size: 13px;
+    position: relative;
+    top: 22px;
+
+  }
+</style>
+
+</head>
+
+<body>
+<a target="_blank" href="https://discord.gg/SCcvD8FdZK"><div id="Discord_link"><img src="https://www.freeiconspng.com/uploads/discord-black-icon-1.png" style="width: 65px; position:absolute; left: 3px;" /><c>Join the Discord!</c></div></a>
+<header>
+<div class="navBar">
+
+<span class="title">Corrupted</span>
+
+<span class="navItem active" id="home">Home</span>
+<span class="navItem" id="staff" href="staff-info" hover-color="#009000">Our Staff</span>
+<span class="navItem" id="server" href="server-info" hover-color="red">Server Info</span>
+<span class="navItem" id="donate" href="donations" hover-color="#00ff00">Support Us</span>
+
+</div>
+
+</header>
+<content>
+
+
+</content>
+<footer><span id="info">
+
+<span id="dev-info">
+Website Developed and Desgined by xJustJqy<br/>
+&nbsp&nbsp&nbsp&#169; 2020 Corrupted Community
+
+</span>
+
+
+</span><footer>
+</body>
+<script>
+
+document.querySelector(".title").setAttribute("style","left: calc(50vw - "+(document.querySelector(".title").offsetWidth/2)+"px)")
+document.querySelectorAll("img").forEach(function(e){
+e.setAttribute('draggable', false);
+});
+
+document.querySelectorAll("span:not(.active)").forEach(function(e) {if(e.hasAttribute("href")){
+var a = e.getAttribute("href"),t;
+if(e.getAttribute("target")){t = e.getAttribute("target");}else{t = "_self";}
+e.onclick = function() {window.open(a, t);}
+}});
+
+document.querySelectorAll("[hover-color]").forEach(function(e) {
+var a = e.getAttribute("hover-color");
+e.onmouseover = function(){e.style.color = a;}
+e.onmouseout = function(){e.style.color = "";}
+});
+
+</script>
+</html>
